@@ -1,0 +1,16 @@
+{
+	"id": "nodebb-plugin-dark-shadow-ban",
+	"name": "(Dark) Shadow Ban",
+	"description": "Shadow ban some users",
+	"url": "https://github.com/cwis-public/nodebb-plugin-dark-shadow-ban",
+	"library": "./index.js",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:post.getPosts", "method": "getUsersPosts" },
+		{ "hook": "filter:post.getPostSummaryByPids", "method": "getUsersPosts" },
+		{ "hook": "filter:topics.get", "method": "getUsersTopics" }
+	],
+	"scripts": [
+		"static/lib/darkshadow.js"
+	]
+}
